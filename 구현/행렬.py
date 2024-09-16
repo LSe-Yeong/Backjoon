@@ -7,7 +7,7 @@ M2,K=map(int,input().split())
 for _ in range(M2):
     mat2.append(list(map(int,input().split())))
     
-result=[[0 for i in range(N)] for _ in range(K)]    
+result=[[0 for i in range(K)] for _ in range(N)]    
     
 for row in range(N):
     for col in range(K):
