@@ -2,7 +2,7 @@ from collections import deque
 t=int(input())
 
 def bfs(start):
-    queue=deque()
+    queue = deque()
     dRow=[0,1,-1,0]
     dCol=[1,0,0,-1]
     row=start[0]
