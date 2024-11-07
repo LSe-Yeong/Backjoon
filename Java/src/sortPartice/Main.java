@@ -45,6 +45,17 @@ public class Main {
         }
         System.out.println();
 
+        PriorityQueue<int[]> pq2d;
+        pq2d = new PriorityQueue<>(Comparator.comparing((int[] a) -> (Integer) a[0]).thenComparing(a -> a[1],Comparator.reverseOrder()));
+        for(int i = 0;i<list2.length;i++){
+            pq2d.offer(list2[i]);
+        }
+        for(int i = 0;i<list2.length;i++){
+            int[] list3 = pq2d.poll();
+            System.out.print(String.valueOf(list3[0])+","+String.valueOf(list3[1]));
+        }
+        System.out.println();
+
         PriorityQueue<String> pq1 = new PriorityQueue<>(Comparator.comparing(map::get)); //String을 입력받아 value를 반환
 
         pq1.addAll(map.keySet());
@@ -102,7 +113,39 @@ public class Main {
         }
         System.out.println();
 
+        listOfMaps.sort(Comparator.comparing((Map<String,Object> map2)->(Integer) map2.get("age")));
 
+        for(int i=0;i<listOfMaps.size();i++){
+            System.out.print("Name: "+listOfMaps.get(i).get("name")+" age: "+String.valueOf(listOfMaps.get(i).get("age")));
+            System.out.println();
+        }
+        System.out.println();
+
+        listOfMaps.sort(Comparator.comparing((Map<String,Object> map2)->(Integer) map2.get("age")).reversed());
+
+        for(int i=0;i<listOfMaps.size();i++){
+            System.out.print("Name: "+listOfMaps.get(i).get("name")+" age: "+String.valueOf(listOfMaps.get(i).get("age")));
+            System.out.println();
+        }
+        System.out.println();
+
+        listOfMaps.add(createMap("Nana",25));
+
+        listOfMaps.sort(Comparator.comparing((Map<String,Object> map2)->(Integer) map2.get("age")).thenComparing(map2 -> (String) map2.get("name")));
+
+        for(int i=0;i<listOfMaps.size();i++){
+            System.out.print("Name: "+listOfMaps.get(i).get("name")+" age: "+String.valueOf(listOfMaps.get(i).get("age")));
+            System.out.println();
+        }
+        System.out.println();
+
+        listOfMaps.sort(Comparator.comparing((Map<String,Object> map2)->(Integer) map2.get("age")).thenComparing(map2 -> (String) map2.get("name"),Comparator.reverseOrder()));
+
+        for(int i=0;i<listOfMaps.size();i++){
+            System.out.print("Name: "+listOfMaps.get(i).get("name")+" age: "+String.valueOf(listOfMaps.get(i).get("age")));
+            System.out.println();
+        }
+        System.out.println();
     }
 
     // Map을 생성하는 헬퍼 메서드
