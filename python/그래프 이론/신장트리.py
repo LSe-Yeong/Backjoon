@@ -24,10 +24,11 @@ for _ in range(e):
 
 for i in range(1,n+1):
     parents[i]=i
-
-edges.sort()
+    
 
 #알고리즘
+edges.sort()
+
 for edge in edges:
     cost,u1,v1 = edge
     print(edge)
