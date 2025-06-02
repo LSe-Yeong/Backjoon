@@ -36,7 +36,7 @@ public class Main {
         }
         System.out.println();
 
-        pq = new PriorityQueue<>(Collections.reverseOrder());
+        pq = new PriorityQueue<>(Comparator.reverseOrder());
         for(int i = 0;i<list.length;i++){
             pq.offer(list[i]);
         }
@@ -87,7 +87,7 @@ public class Main {
             System.out.println("Name: " + element.get("name") + ", Age: " + element.get("age"));
         }
 
-        pq2 = new PriorityQueue<>(Comparator.comparing((Map<String,Object> map1)-> (Integer) map1.get("age")).reversed());
+        pq2 = new PriorityQueue<>(Comparator.comparing((Map<String,Object> map1)-> (Integer) map1.get("age"),Comparator.reverseOrder()));
 
         pq2.addAll(listOfMaps);
 
