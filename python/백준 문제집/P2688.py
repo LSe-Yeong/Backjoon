@@ -25,7 +25,10 @@ for i in range(N):
 for i in range(1,N+1):
     visited = [False for i in range(N+1)]
     dfs(i,i,visited)
-print(result)
+
+print(len(result))
+for v in result:
+    print(v)
 
 
 
