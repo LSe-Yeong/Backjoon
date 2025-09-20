@@ -40,4 +40,4 @@ def solution(food_times, k):
             heapq.heappop(q)
     return -1
 
-print(solution([3,1,2],6))      
+print(solution([3,1,2],8))      

@@ -13,6 +13,14 @@ N = input()
 # else:
 #     print("READY")
 
+sum_1 = 0
+for i in range(len(N)//2):
+    sum_1 += int(N[i])
+sum_2 = 0
+for i in range(len(N)//2,len(N)):
+    sum_2 += int(N[i])
 
-
-
+if(sum_1==sum_2):
+    print("LUCKY")
+else:
+    print("READY")
