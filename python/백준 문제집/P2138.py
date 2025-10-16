@@ -46,7 +46,7 @@ for i in range(1,N):
         count+=1
         toggle(i,N,sample_status)
 
-if sample_status[-1] == target[-1] and (count < result and result != -1):
+if sample_status[-1] == target[-1] and (count < result or result == -1):
     result = count 
 
 print(result)
