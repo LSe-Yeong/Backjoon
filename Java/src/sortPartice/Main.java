@@ -5,7 +5,8 @@ import java.util.*;
 public class Main {
     public static void main(String[] args){
         PriorityQueue<Integer> pq = new PriorityQueue<>();
-        int[] list = {6,5,9,1,6,3,10,5,8};
+        Integer[] list = {6,5,9,1,6,3,10,5,8};
+
         int[][] list2 = {
                 {3, 5},
                 {1, 2},
@@ -46,7 +47,8 @@ public class Main {
         System.out.println();
 
         PriorityQueue<int[]> pq2d;
-        pq2d = new PriorityQueue<>(Comparator.comparing((int[] a) -> (Integer) a[0]).thenComparing(a -> a[1],Comparator.reverseOrder()));
+        pq2d = new PriorityQueue<>(Comparator.comparing((int[] a) -> (Integer) a[0]).thenComparing(a -> a[1],
+                Comparator.reverseOrder()));
         for(int i = 0;i<list2.length;i++){
             pq2d.offer(list2[i]);
         }
@@ -104,7 +106,7 @@ public class Main {
         }
         System.out.println();
 
-        Arrays.sort(list2,Comparator.comparing((int[] row)-> (Integer) (row[0])).reversed().thenComparing(row -> row[1]).reversed());
+        Arrays.sort(list2,Comparator.comparing((int[] row)-> (Integer) (row[0])).thenComparing(row -> row[1]).reversed());
         for(int i=0;i<list2.length;i++){
             for(int j=0;j<list2[i].length;j++) {
                 System.out.print(list2[i][j] + " ");
