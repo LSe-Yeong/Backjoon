@@ -100,3 +100,42 @@
 #         print(distance[i])
 
 
+st = "aaabbbaaccc"
+st_list = []
+
+idx = 0
+while idx < len(st)-1:
+    count = 1
+    while idx != len(st) - 1 and st[idx] == st[idx+1]:
+        count += 1
+        idx += 1
+    st_list.append((st[idx],count))
+    idx += 1
+
+result = 0
+for i in range(len(st_list)-1):
+    ch, num = st_list[i]
+    value = st_list[i+1][1]
+    result += min(num,value)
+
+    if num < value:
+        print(ch,result)
+        continue
+
+    idx = i + 2
+    subCount = 0
+    while idx != len(st_list) and st_list[idx][1] == value:
+        idx += 1
+        subCount += 1
+    
+    if idx == len(st_list):
+        result += subCount
+        print(ch,result)
+        continue
+
+    if st_list[idx][1] > value:
+        result += subCount
+        result += 1
+    print(ch,result)
+
+print(result)
